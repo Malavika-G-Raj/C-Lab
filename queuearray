@@ -1,0 +1,71 @@
+#include<stdio.h>
+#include<stdlib.h>
+int queue[100],n,x,t,i,ch;
+int f=-1;
+int r=-1;
+void enqueue();
+void dequeue();
+void display();
+void main()
+{
+ printf("\n Enter size of stack\n");
+ scanf("%d",&n);
+ printf("\n Choose the operation\n");
+ printf("\n 1.Insertion \n 2.Deletion \n 3.DISPLAY\n 5. EXIT\n");
+ do
+{ 
+ printf("\n Enter your choice\n");
+ scanf("%d",&ch);
+ switch(ch)
+{
+ case 1:enqueue();
+        break;
+ case 2:dequeue();
+        break;
+case 3:display();
+         break;
+case 4:exit;
+        break;
+default:printf("wrong input");
+}
+}while(ch<5);
+}
+void enqueue()
+{
+    if(r==n-1)
+    {
+        printf("Overflow");
+    }
+    
+    else
+    {
+        if(f==-1)
+    {
+        f++;
+    }
+        printf("\n Enter the element\n");
+        scanf("%d",&x);
+        r++;
+        queue[r]=x;
+    }
+}
+void dequeue()
+{
+    if(f>r||r==-1)
+    {
+        printf("Underflow");
+    }
+    else
+    {
+        t=queue[f];
+        f++;
+    }
+}
+void display()
+{
+    printf("\n The queue elements are\n");
+    for(i=r;i<f;i--)
+    {
+        printf("%d \t",i);
+    }
+}
