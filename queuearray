@@ -58,14 +58,15 @@ void dequeue()
     else
     {
         t=queue[f];
+        printf("\n The deleted element is%d"t);
         f++;
     }
 }
 void display()
 {
     printf("\n The queue elements are\n");
-    for(i=r;i<f;i--)
+    for(i=f;i<=r;i++)
     {
-        printf("%d \t",i);
+        printf("%d \t",queue[i]);
     }
 }
