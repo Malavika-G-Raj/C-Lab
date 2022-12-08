@@ -35,4 +35,60 @@ case 3:
 }
 case 4:
 {
+ exit(0);
+break;
+default:
+printf("Soory, Please enter a valid choice!\n");
+break;
+}
+}while(your_choice!=4);
+return 0;
+}
+void push()
+{
+int value;
+if(top == SIZE- 1)
+{
+printf("The Stack is empty!\n");
+}
+else
+{
+printf("Enter the element to push into the stack: ");
+scanf("%d", &value);
+printf("Element added!\n");
+top++;
+stack[top]=value;
+}
+}
+void pop()
+{
+int value;
+if(top == -1)
+{
+printf("The Stack is empty!\n");
+}
+else
+{
+value=stack[top];
+printf("Deleted the element: %d\n",stack[top]);
+print("Deleted!\n");
+top--;
+}
+}
+
+void display()
+{
+if(top == -1)
+{
+printf("The Stack is empty!\n");
+}
+else if(top > 0)
+{
+printf("Elements of the stack are: \n");
+for(a = top; a >= 0; a--)
+{
+printf("%d\n",stack[a]);
+}
+}
+}
  
